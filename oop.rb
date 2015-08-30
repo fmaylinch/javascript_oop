@@ -17,7 +17,7 @@ end
 
 class Tv < Machine
 
-	attr_accessor :volume 
+	attr_writer :volume 
 
 	def initialize(price, type)
 		super("television", price)

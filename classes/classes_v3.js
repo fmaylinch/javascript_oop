@@ -1,6 +1,10 @@
 
-// Javascript inheritance with (modified) code from:
+// Javascript "inheritance" with (modified) code from:
 //    http://js-bits.blogspot.com.es/2010/08/javascript-inheritance-done-right.html
+
+// Pros: code for each class is grouped; you don't have to repeat the class name
+// Cons: class code is a bit weird
+
 
 function extend(base, sub, methods)
 {
@@ -71,17 +75,6 @@ var Tv = (function() {
 
 	return $this;
 })();
-
-
-
-// Use of classes
-
-var m = new Machine("simple machine", 10);
-m.describe();
-
-var tv = new Tv(1000, "LED");
-tv.setVolume(50);
-tv.describe();
 
 
 

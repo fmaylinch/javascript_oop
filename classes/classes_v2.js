@@ -1,12 +1,15 @@
 
-// Javascript inheritance with an auxiliary method (it's the same as v1 but refactored)
+// Javascript "inheritance" with an auxiliary method (it's the same as v1 but refactored)
+
+// Pros: code is a bit more clean
+// Cons: code still not very clear
 
 
 // Configures "inheritance" between two "classes"
 function extend(Parent, Child) {
-	Child.prototype = new Parent();       // Sets "inheritance" chain (actually, sets prototype chain) 
-	Child.prototype.constructor = Child;  // Fixes the "constructor" property
-	Child.parent = Parent.prototype;      // Lets you use Child.parent.constructor and Child.parent.method
+	Child.prototype = new Parent();      // Sets "inheritance" (actually, prototype chain) 
+	Child.prototype.constructor = Child; // Fixes the "constructor" property
+	Child.super = Parent.prototype;      // Lets you use Child.super.constructor and Child.super.method
 }
 
 
@@ -34,7 +37,7 @@ Machine.prototype.toString = function() {
 
 // "Class" + Constructor
 var Tv = function(price, type) {
-	Tv.parent.constructor.call(this, "television", price); // call to super constructor
+	Tv.super.constructor.call(this, "television", price); // call to super constructor
 	this.type = type;
 	this.volume = 0;
 };
@@ -49,10 +52,11 @@ Tv.prototype.setVolume = function (volume) {
 
 // Returns Tv info (overrides the parent method)
 Tv.prototype.toString = function () {
-	return Tv.parent.toString.call(this) // call to super method
+	return Tv.super.toString.call(this) // call to super method
 		+ ", type " + this.type
 		+ ", current volume " + this.volume; 
 };
+
 
 
 // Export module

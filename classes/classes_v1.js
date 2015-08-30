@@ -1,5 +1,8 @@
 
-// Javascript inheritance, simplest form I've found
+// Javascript "inheritance" using the prototype chain
+
+// Pros: doesn't need any auxiliar method
+// Cons: code is not very clear
 
 
 // Machine "class"
@@ -31,7 +34,7 @@ var Tv = function(price, type) {
 };
 
 // Tv "extends" Machine
-Tv.prototype = new Machine();  // Sets "inheritance" chain (actually, sets prototype chain)
+Tv.prototype = new Machine();  // Sets "inheritance" (actually, prototype chain)
 Tv.prototype.constructor = Tv; // Fixes the "constructor" property
 
 // Changes volume of Tv
