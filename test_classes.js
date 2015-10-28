@@ -4,6 +4,7 @@ var classes = require("./classes/classes_v1.js");
 //var classes = require("./classes/classes_v2.js");
 //var classes = require("./classes/classes_v3.js");
 //var classes = require("./classes/classes_v4.js");
+//var classes = require("./classes/classes_v5.js");
 
 
 // Extract objects from export module
